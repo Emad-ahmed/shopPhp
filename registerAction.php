@@ -13,8 +13,8 @@ $_mobile_pattern = "/^(\+88|88)?01[3-9]\d{8}$/";
 $_emailPattern = "/^[a-zA-Z0-9_-]{3,}@[a-zA-Z0-9_-]{3,}\.[a-zA-Z]{2,4}$/";
 $_password_pattern = "/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/";
 
-$_duplicate_email = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'");
 
+$_duplicate_email = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$email'");
 
 if (mysqli_num_rows($_duplicate_email) > 0) {
     echo "<script>alert('Email Already Taken')</script>";

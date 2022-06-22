@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+include 'config.php';
+
+$user_email = $_SESSION['email'];
+
+
+$datafetchquery = mysqli_query($conn, "SELECT * FROM `users` WHERE email = '$user_email'");
+
+$data = mysqli_fetch_array($datafetchquery);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,12 +103,23 @@
                     </li>
                 </ul>
                 <form class="d-flex">
-                    <a href="login.php" class="btn btn-outline-warning text-white me-5" type="submit">
-                        Login
-                    </a>
-                    <a href="register.php" class="btn btn-outline-dark text-white me-5" type="submit">
-                        Register
-                    </a>
+                    <?php
+                    if (!isset($_SESSION['email'])) {
+                        echo '<a href="login.php" class="btn btn-outline-warning text-white me-5" type="submit">
+            Login
+          </a>
+          <a href="register.php" class="btn btn-outline-dark text-white me-5" type="submit">
+            Register
+          </a>';
+                    } else {
+                        echo '<a href="logout.php" class="btn btn-outline-warning text-white me-5" type="submit">
+            Logout
+          </a>
+          <a href="profile.php" class="btn btn-outline-warning text-white me-5" type="submit">
+            Profile
+          </a>';
+                    }
+                    ?>
                 </form>
             </div>
         </div>
@@ -102,23 +127,23 @@
 
 
     <div class="container  mt-5 mb-5 border-radius">
-        <form action="registerAction.php" method="POST" class="bg-primary p-4 w-50 m-auto  text-white">
+        <form action="profileAction.php" method="POST" class="bg-primary p-4 w-50 m-auto  text-white">
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
-                <input type="text" name="name" class="form-control" id="name">
+                <input type="text" name="name" value="<?php echo $data['name'] ?>" class="form-control" id="name">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" value="<?php echo $data['email'] ?>" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
             <div class="mb-3">
                 <label for="mobile" class="form-label">Mobile</label>
-                <input type="text" class="form-control" id="mobile" name="phone">
+                <input type="text" value="<?php echo $data['mobile'] ?>" class="form-control" id="mobile" name="phone">
             </div>
             <div class="mb-3">
                 <label for="mobile" class="form-label">City</label>
-                <select class="form-select form-select-sm" name="city" aria-label=".form-select-sm example">
+                <select class="form-select form-select-sm" value="<?php echo $data['city'] ?>" name="city" aria-label=".form-select-sm example">
                     <option selected>Sylhet</option>
                     <option value="Dhaka">Dhaka</option>
                     <option value="Rangpur">Rangpur</option>
@@ -127,19 +152,10 @@
                     <option value="Chottagram">Chottagram</option>
                 </select>
             </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                <input type="password" name="cpassword" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-warning col-12 mt-4">Submit</button>
+
+
+            <input type="hidden" name="id" value="<?php echo $data['id'] ?>">
+
         </form>
     </div>
 

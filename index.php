@@ -104,7 +104,7 @@ session_start();
             echo '<a href="logout.php" class="btn btn-outline-warning text-white me-5" type="submit">
             Logout
           </a>
-          <a href="logout.php" class="btn btn-outline-warning text-white me-5" type="submit">
+          <a href="profile.php" class="btn btn-outline-warning text-white me-5" type="submit">
             Profile
           </a>';
           }
@@ -161,7 +161,7 @@ session_start();
         <div class='card-body'>
         <h5 class='card-title'>$row[title]</h5>
         <p class='card-text'>$row[description]</p>
-        <p>$row[price]</p>
+        <p class='text-info'> Price: $row[price]Tk</p>
         </div>
         </div>
         </div>
@@ -181,8 +181,8 @@ session_start();
         <div class="col-lg-6 offset-lg-3">
           <div class="contact-content text-center">
 
-            <h6>1120 Lorem ipsum dolor sit amet, KC 179050, Chandigarh.</h6>
-            <h6>+01 2345 6789 12<span>|</span>+01 2345 6789 12</h6>
+            <h6>Dinajpur, Rangpur, Bangladesh</h6>
+            <h6>+8801704-262666<span>|</span>+01305814962</h6>
             <div class="contact-social">
               <ul>
                 <li><a class="hover-target" href=""><i class="fab fa-facebook-f"></i></a></li>
