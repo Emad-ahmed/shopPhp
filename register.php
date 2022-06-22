@@ -102,19 +102,22 @@
 
 
     <div class="container  mt-5 mb-5 border-radius">
-        <form action="registerAction.php" method="POST" class="bg-primary p-4 w-50 m-auto  text-white">
+        <form action="registerAction.php" method="POST" class="bg-primary p-4 w-50 m-auto  text-white" onsubmit="return formValidation()">
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
                 <input type="text" name="name" class="form-control" id="name">
+                <p class="mt-0 errorp" id="ferror"></p>
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <p class="mt-0 errorp" id="eerror"></p>
             </div>
             <div class="mb-3">
                 <label for="mobile" class="form-label">Mobile</label>
                 <input type="text" class="form-control" id="mobile" name="phone">
+                <p class="mt-0 errorp" id="merror"></p>
             </div>
             <div class="mb-3">
                 <label for="mobile" class="form-label">City</label>
@@ -130,16 +133,16 @@
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+                <p class="mt-0 errorp" id="perror"></p>
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-                <input type="password" name="cpassword" class="form-control" id="exampleInputPassword1">
+                <input type="password" name="cpassword" class="form-control" id="password">
+                <p class="mt-0 errorp" id="cperror"></p>
             </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-warning col-12 mt-4">Submit</button>
+
+            <input class="btn btn-warning" type="submit" value="Register" />
+            <a href="login.php" class="text-danger">Already Have an account?</a>
         </form>
     </div>
 
@@ -171,7 +174,7 @@
     </footer>
 
     <!-- Optional JavaScript; choose one of the two! -->
-
+    <script src="js/formvalid.js"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 

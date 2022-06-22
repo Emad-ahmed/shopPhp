@@ -50,4 +50,8 @@ main {
     background-color: #414a5c;
     margin-top: 2rem;
   }
-  
+  .errorp {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}

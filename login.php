@@ -113,10 +113,7 @@
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" name="password" class="form-control" id="exampleInputPassword1">
             </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
+            <a href="register.php" class="mt-3 mb-2 text-white">Create Account</a>
             <button type="submit" class="btn btn-warning col-12 mt-4">Submit</button>
         </form>
     </div>

@@ -161,7 +161,8 @@ session_start();
         <div class='card-body'>
         <h5 class='card-title'>$row[title]</h5>
         <p class='card-text'>$row[description]</p>
-        <p class='text-info'> Price: $row[price]Tk</p>
+        <p class='text-success'> Price: $row[price]Tk</p>
+        <a class='btn btn-info'>Add To Cart</a>
         </div>
         </div>
         </div>
