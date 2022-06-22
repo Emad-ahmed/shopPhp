@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-info p-3">
+    <nav class="navbar navbar-expand-lg navbar-light  p-3">
         <div class="container-fluid">
             <a class="navbar-brand ms-5" href="index.php">Israt Shop</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,7 +102,7 @@
 
 
     <div class="container  mt-5 mb-5 border-radius">
-        <form action="registerAction.php" method="POST" class="bg-primary p-4 w-50 m-auto  text-white" onsubmit="return formValidation()">
+        <form action="registerAction.php" method="POST" class="p-4 w-50 m-auto  text-white" onsubmit="return formValidation()">
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
                 <input type="text" name="name" class="form-control" id="name">

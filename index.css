@@ -5,6 +5,20 @@ main {
     padding-bottom: 2rem;
   }
 
+  nav
+  {
+    background: #023047 !important; 
+  }
+  
+form{
+  background: #023047 !important; 
+}
+  .navbar-brand
+  {
+    color: white !important;
+    font-weight: bolder;
+  }
+
   .nav-link
   {
     color: white !important;
