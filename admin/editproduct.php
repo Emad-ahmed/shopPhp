@@ -7,9 +7,9 @@ $id = $_GET['id'];
 $datafetchquery = mysqli_query($conn, "SELECT * FROM `product` WHERE id = '$id'");
 
 $data = mysqli_fetch_array($datafetchquery);
-
-
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -51,6 +51,9 @@ $data = mysqli_fetch_array($datafetchquery);
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.php">Main Shop</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="home.php">Dashboard</a>
                     </li>
 
@@ -78,8 +81,7 @@ $data = mysqli_fetch_array($datafetchquery);
             <div class="mb-3">
                 <label for="ptitle" class="form-label">Description</label>
                 <div class="form-floating">
-                    <textarea class="form-control" value="<?php echo $data['description'] ?>" name="desc" placeholder="Description" id="floatingTextarea"></textarea>
-                    <label for="floatingTextarea">Description</label>
+                    <input class="form-control" value="<?php echo $data['description'] ?>" name="desc" placeholder="Description" id="floatingTextarea"></input>
                 </div>
 
             </div>
